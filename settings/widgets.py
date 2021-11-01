@@ -55,6 +55,7 @@ def workspaces():
             other_screen_border=colors['dark'],
             disable_drag=True
         ),
+        widget.Prompt(**base(fg='focus'), fontsize=20, padding=15),
         separator(),
         widget.WindowName(**base(fg='focus'), fontsize=20, padding=5),
         separator(),

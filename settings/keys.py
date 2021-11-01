@@ -40,7 +40,6 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "control"], "r", lazy.restart()),
 
     ([mod, "control"], "q", lazy.shutdown()),
-    ([mod], "r", lazy.spawncmd()),
 
     # ------------ App Configs ------------
 
@@ -54,7 +53,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "Return", lazy.spawn("alacritty")),
 
     # prompt
-    
+    ([mod], "r", lazy.spawncmd()),
 
     # Screenshot
     ([mod], "s", lazy.spawn("scrot")),
