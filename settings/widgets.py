@@ -88,6 +88,10 @@ primary_widgets = [
 
     powerline('color4', 'color3'),
 
+    BatteryIconWidget(
+        **base(bg='color4')
+        ),
+
     widget.Battery(
         **base(bg='color4'),
         format="{percent:2.0%} {hour:d}:{min:02d}"
