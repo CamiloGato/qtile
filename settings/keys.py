@@ -44,24 +44,17 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # ------------ App Configs ------------
 
-    # Menu
-    ([mod], "m", lazy.spawn("rofi -show drun")),
-
-    # Window Nav
-    ([mod, "shift"], "m", lazy.spawn("rofi -show")),
-
     # Browser
     ([mod], "b", lazy.spawn("firefox")),
 
     # File Explorer
-    ([mod], "e", lazy.spawn("pcmanfm")),
+    ([mod], "e", lazy.spawn("dolphin")),
 
     # Terminal
     ([mod], "Return", lazy.spawn("alacritty")),
 
-    # Redshift
-    ([mod], "r", lazy.spawn("redshift -O 2400")),
-    ([mod, "shift"], "r", lazy.spawn("redshift -x")),
+    # prompt
+    
 
     # Screenshot
     ([mod], "s", lazy.spawn("scrot")),
@@ -70,17 +63,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Hardware Configs ------------
 
     # Volume
-    ([], "XF86AudioLowerVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ -5%"
-    )),
-    ([], "XF86AudioRaiseVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ +5%"
-    )),
-    ([], "XF86AudioMute", lazy.spawn(
-        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-    )),
+    ([mod, "control"], "7", lazy.spawn("amixer sset Master playback 10%+")),
+    ([mod, "control"], "8", lazy.spawn("amixer sset Master playback 10%-")),
 
     # Brightness
-    ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+    ([mod, "control"], "9", lazy.spawn("xbacklight -inc 10")),
+    ([mod, "control"], "0", lazy.spawn("xbacklight -dec 10")),
 ]]

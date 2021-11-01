@@ -1,5 +1,6 @@
 from libqtile import widget
 from .theme import colors
+# from customWidgets import BatteryIconWidget
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
@@ -65,8 +66,6 @@ def workspaces():
 primary_widgets = [
     *workspaces(),
 
-    separator(),
-
     powerline('color4', 'dark'),
 
     icon(bg="color4", text=' '), # Icon: nf-fa-download
@@ -85,9 +84,16 @@ primary_widgets = [
 
     icon(bg="color3", text=' '),  # Icon: nf-fa-feed
     
-    widget.Net(**base(bg='color3'), interface='wlp2s0'),
+    widget.Net(**base(bg='color3')),
 
-    powerline('color2', 'color3'),
+    powerline('color4', 'color3'),
+
+    widget.Battery(
+        **base(bg='color4'),
+        format="{percent:2.0%} {hour:d}:{min:02d}"
+    ),
+
+    powerline('color2', 'color4'),
 
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
 
