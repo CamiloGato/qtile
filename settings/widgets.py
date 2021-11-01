@@ -2,8 +2,6 @@ from libqtile import widget
 from .theme import colors
 from .customWidgets import BatteryIconWidget
 
-# Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
-
 def base(fg='text', bg='dark'): 
     return {
         'foreground': colors[fg],
@@ -15,7 +13,7 @@ def separator():
     return widget.Sep(**base(), linewidth=0, padding=5)
 
 
-def icon(fg='text', bg='dark', fontsize=16, text="?"):
+def icon(fg='text', bg='dark', fontsize=24, text="?"):
     return widget.TextBox(
         **base(fg, bg),
         fontsize=fontsize,
@@ -27,9 +25,9 @@ def icon(fg='text', bg='dark', fontsize=16, text="?"):
 def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
-        text="", # Icon: nf-oct-triangle_left
-        fontsize=37,
-        padding=-2
+        text="",
+        fontsize=55,
+        padding=-5,
     )
 
 
@@ -39,12 +37,12 @@ def workspaces():
         widget.GroupBox(
             **base(fg='light'),
             font='UbuntuMono Nerd Font',
-            fontsize=19,
+            fontsize=27,
             margin_y=3,
             margin_x=0,
-            padding_y=8,
+            padding_y=20,
             padding_x=5,
-            borderwidth=1,
+            borderwidth=3,
             active=colors['active'],
             inactive=colors['inactive'],
             rounded=False,
@@ -58,7 +56,7 @@ def workspaces():
             disable_drag=True
         ),
         separator(),
-        widget.WindowName(**base(fg='focus'), fontsize=14, padding=5),
+        widget.WindowName(**base(fg='focus'), fontsize=20, padding=5),
         separator(),
     ]
 
@@ -68,7 +66,7 @@ primary_widgets = [
 
     powerline('color4', 'dark'),
 
-    icon(bg="color4", text=' '), # Icon: nf-fa-download
+    icon(bg="color4", text=' '),
     
     widget.CheckUpdates(
         background=colors['color4'],
@@ -82,7 +80,7 @@ primary_widgets = [
 
     powerline('color3', 'color4'),
 
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
+    icon(bg="color3", text=' '), 
     
     widget.Net(**base(bg='color3')),
 
@@ -105,7 +103,7 @@ primary_widgets = [
 
     powerline('color1', 'color2'),
 
-    icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
+    icon(bg="color1", fontsize=27, text=' '),
 
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
@@ -134,7 +132,7 @@ secondary_widgets = [
 
 widget_defaults = {
     'font': 'UbuntuMono Nerd Font Bold',
-    'fontsize': 14,
+    'fontsize': 24,
     'padding': 1,
 }
 extension_defaults = widget_defaults.copy()
