@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/fish
 
 # wallpaper
 feh --bg-fill ~/Imágenes/kiss-shot.png &
