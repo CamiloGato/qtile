@@ -56,8 +56,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "r", lazy.spawncmd()),
 
     # Screenshot
-    ([mod], "s", lazy.spawn("scrot")),
-    ([mod, "shift"], "s", lazy.spawn("scrot -s")),
+    ([mod], "s", lazy.spawn("scrot $HOME/Screenshots/%Y-%m-%d-%T-screenshot.png")),
+    ([mod, "shift"], "s", lazy.spawn("scrot -s -e 'xclip -selection clipboard -t image/png -i $f'")),
 
     # ------------ Hardware Configs ------------
 

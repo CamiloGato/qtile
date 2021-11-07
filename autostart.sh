@@ -1,4 +1,4 @@
-#!/bin/shell
+#!/bin/sh
 
 # wallpaper
 feh --bg-fill ~/Imágenes/kiss-shot.png &
@@ -6,3 +6,5 @@ feh --bg-fill ~/Imágenes/kiss-shot.png &
 cbatticon -u 5 &
 # systray volume
 volumeicon &
+# systray wifi
+nm-applet &
