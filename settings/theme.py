@@ -4,9 +4,7 @@ import json
 
 from .path import qtile_path
 
-
-def load_theme():
-    theme = "dark-grey"
+def load_theme(theme="dark-grey"):
 
     config = path.join(qtile_path, "config.json")
     if path.isfile(config):
@@ -23,7 +21,6 @@ def load_theme():
 
     with open(path.join(theme_file)) as f:
         return json.load(f)
-
 
 if __name__ == "settings.theme":
     colors = load_theme()
