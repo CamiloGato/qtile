@@ -15,8 +15,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "l", lazy.layout.right()),
 
     # Change window sizes (MonadTall)
-    ([mod, "shift"], "l", lazy.layout.grow()),
-    ([mod, "shift"], "h", lazy.layout.shrink()),
+    # ([mod, "shift"], "l", lazy.layout.grow()),
+    # ([mod, "shift"], "h", lazy.layout.shrink()),
 
     # Toggle floating
     ([mod, "shift"], "f", lazy.window.toggle_floating()),
@@ -24,6 +24,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Move windows up or down in current stack
     ([mod, "shift"], "j", lazy.layout.shuffle_down()),
     ([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    ([mod, "shift"], "h", lazy.layout.shuffle_left()),
+    ([mod, "shift"], "l", lazy.layout.shuffle_right()),
 
     # Toggle between different layouts as defined below
     ([mod], "Tab", lazy.next_layout()),
